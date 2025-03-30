@@ -5,7 +5,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <Routes>
   <Route path="/wishlist/:id" element={<Wishlist />} />
-  <Route path="*" element={<Wishlist />} />   // <- эта строка критична!
+  <Route path="*" element={<Wishlist />} />  {/* эта строка критична! */}
   </Routes>
   </BrowserRouter>
 )
