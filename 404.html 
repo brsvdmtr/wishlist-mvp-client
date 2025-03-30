@@ -1,0 +1,10 @@
+<!-- wishlist-mvp-client/404.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="refresh" content="0; url=/?redirect=%2F" />
+    <script>
+      window.location.href = "/?redirect=" + encodeURIComponent(location.pathname);
+    </script>
+  </head>
+</html>
