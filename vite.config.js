@@ -1,20 +1,15 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { resolve } from 'path'
 
 export default defineConfig({
   plugins: [react()],
-  server: {
-    port: 3000
-  },
   build: {
-    outDir: 'dist'
-  },
-  // 👇 ВАЖНО: добавь это
-  resolve: {
-    alias: {
-      '@': '/src'
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        fallback: resolve(__dirname, '404.html'),
+      }
     }
-  },
-  // 👇 ВАЖНО: поддержка SPA роутинга
-  base: '/',
+  }
 })
