@@ -1,18 +1,20 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  build: {
-    outDir: 'dist',
-  },
   server: {
-    port: 5173,
-    open: true,
+    port: 3000
   },
-  // 👇 Эта часть важна!
-  preview: {
-    port: 4173,
-    open: true,
-  }
-});
+  build: {
+    outDir: 'dist'
+  },
+  // 👇 ВАЖНО: добавь это
+  resolve: {
+    alias: {
+      '@': '/src'
+    }
+  },
+  // 👇 ВАЖНО: поддержка SPA роутинга
+  base: '/',
+})
